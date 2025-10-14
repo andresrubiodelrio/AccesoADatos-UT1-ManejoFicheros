@@ -1,5 +1,6 @@
 package ficherosxmljdom2;
 
+import org.iesalandalus.programacion.utilidades.Entrada;
 import org.jdom2.*;
 import org.jdom2.input.SAXBuilder;
 import org.jdom2.output.Format;
@@ -12,7 +13,7 @@ import java.io.IOException;
 public class ModificarXMLPersonas {
     public static void main(String[] args) {
         try {
-            File xmlFile = new File("datos/personas.xml");
+            File xmlFile = new File("datos/xml/personas.xml");
             SAXBuilder saxBuilder = new SAXBuilder();
             Document document = saxBuilder.build(xmlFile);
 
@@ -20,29 +21,38 @@ public class ModificarXMLPersonas {
             Element raiz = document.getRootElement();
 
             // Buscar el nodo <persona> con el atributo id="1"
-            Element personaMod = null;
-            for (Element persona : raiz.getChildren("persona")) {
-                if (persona.getAttributeValue("id").equals("1")) {
-                    personaMod = persona;
+            System.out.print("Introduce el identificador (id) de la persona a modificar su nombre: ");
+            String identificador= Entrada.cadena();
+
+            Element elementoPersonaAModificar = null;
+            for (Element elementoPersona : raiz.getChildren("persona")) {
+                if (elementoPersona.getAttributeValue("id").equals(identificador)) {
+                    elementoPersonaAModificar = elementoPersona;
                     break;
                 }
             }
 
-            if (personaMod != null) {
+            if (elementoPersonaAModificar != null) {
+                System.out.print("Introduce el nuevo nombre de la persona con identificador id=" + identificador + ": ");
+                String nuevoNombre=Entrada.cadena();
+
                 // Modificar el texto del nodo <nombre>
-                personaMod.getChild("nombre").setText("Juanito");
-                System.out.println("Modificación realizada 1.");
+                elementoPersonaAModificar.getChild("nombre").setText(nuevoNombre);
+                System.out.println("Modificación realizada al elemento nombre de la persona con identificador id=" + identificador);
             } else {
-                System.out.println("No se encontró el id=1.");
+                System.out.println("No se encontró a la persona con el id=" + identificador);
             }
 
 
-
+            System.out.print("Introduce la edad de las personas a modificar: ");
+            String edad=Entrada.cadena();
+            System.out.print("Introduce la nueva edad de las personas a modificar: ");
+            String nuevaEdad=Entrada.cadena();
             //Buscar los nodos persona con la edad = 25 y modificarlos
-            for (Element persona : raiz.getChildren("persona")) {
-                if(persona.getChildText("edad").equals("25")) {
-                    persona.getChild("edad").setText("45");
-                    System.out.println("Modificación realizada.");
+            for (Element elementoPersona : raiz.getChildren("persona")) {
+                if(elementoPersona.getChildText("edad").equals(edad)) {
+                    elementoPersona.getChild("edad").setText(nuevaEdad);
+                    System.out.println("Modificaciones de la edad realizadas.");
                 }
             }
 
@@ -56,7 +66,7 @@ public class ModificarXMLPersonas {
 
             // Guardar los cambios en el mismo archivo
             XMLOutputter xmlOutputter = new XMLOutputter(Format.getPrettyFormat());
-            xmlOutputter.output(document, new FileWriter("datos/modificacionPersonas.xml"));
+            xmlOutputter.output(document, new FileWriter("datos/xml/modificacionPersonas.xml"));
 
         }
         catch (IOException e)

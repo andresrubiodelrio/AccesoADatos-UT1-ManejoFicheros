@@ -12,7 +12,7 @@ public class LeerXMLPersonas {
         try
         {
             // Cargar el fichero XML
-            File file = new File("datos/personas.xml");
+            File file = new File("datos/xml/personas.xml");
             SAXBuilder saxBuilder = new SAXBuilder();
             Document document = saxBuilder.build(file);
 

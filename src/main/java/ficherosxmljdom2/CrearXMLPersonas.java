@@ -33,7 +33,7 @@ public class CrearXMLPersonas {
 
             // Guardar en un archivo
             XMLOutputter xmlOutputter = new XMLOutputter(Format.getPrettyFormat());
-            xmlOutputter.output(document, new FileWriter("datos/personas.xml"));
+            xmlOutputter.output(document, new FileWriter("datos/xml/personas.xml"));
 
             System.out.println("Fichero XML creado.");
 

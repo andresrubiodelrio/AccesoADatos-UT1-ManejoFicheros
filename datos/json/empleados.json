@@ -1,0 +1,32 @@
+[ {
+  "id" : 4,
+  "apellido" : "REYES",
+  "dep" : 20,
+  "salario" : 2600.0
+}, {
+  "id" : 5,
+  "apellido" : "CASILLA",
+  "dep" : 30,
+  "salario" : 1535.87
+}, {
+  "id" : 7,
+  "apellido" : "FERNANDEZ",
+  "dep" : 10,
+  "salario" : 1100.45,
+  "ciudad" : "Almeria"
+}, {
+  "id" : 9,
+  "apellido" : "GIL",
+  "dep" : 20,
+  "salario" : 2500.6
+}, {
+  "id" : 10,
+  "apellido" : "LOPEZ",
+  "dep" : 10,
+  "salario" : 3100.0
+}, {
+  "id" : 44,
+  "apellido" : "SABINA",
+  "dep" : 30,
+  "salario" : 3000.45
+} ]
