@@ -9,7 +9,7 @@ public class Empleado {
     private int dep;
     private double salario;
 
-    public Empleado() {} // Constructor vacío requerido por Jackson
+  //  public Empleado() {} // Constructor vacío requerido por Jackson
 
     public Empleado(int id, String apellido, int dep, double salario) {
         setId(id);

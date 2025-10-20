@@ -21,8 +21,8 @@ public class AgregarElementoArrayJsonNode {
 
             // Crear un nuevo objeto JSON para añadir al array
             ObjectNode nuevoEmpleado = mapper.createObjectNode();
-            nuevoEmpleado.put("id", 44);
-            nuevoEmpleado.put("apellido", "SABINA");
+            nuevoEmpleado.put("id", 54);
+            nuevoEmpleado.put("apellido", "RAMOS");
             nuevoEmpleado.put("dep", 30);
             nuevoEmpleado.put("salario", 3100.0);
 

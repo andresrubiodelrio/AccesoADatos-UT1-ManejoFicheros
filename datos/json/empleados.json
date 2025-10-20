@@ -7,7 +7,8 @@
   "id" : 5,
   "apellido" : "CASILLA",
   "dep" : 30,
-  "salario" : 1535.87
+  "salario" : 1535.87,
+  "ciudad" : "Malaga"
 }, {
   "id" : 7,
   "apellido" : "FERNANDEZ",
@@ -29,4 +30,9 @@
   "apellido" : "SABINA",
   "dep" : 30,
   "salario" : 3000.45
+}, {
+  "id" : 54,
+  "apellido" : "RAMOS",
+  "dep" : 30,
+  "salario" : 3100.0
 } ]

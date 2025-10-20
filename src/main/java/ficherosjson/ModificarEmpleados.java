@@ -38,6 +38,7 @@ public class ModificarEmpleados {
                 }
             }
 
+
             // ---- AÑADIR UN NUEVO EMPLEADO ----
             Empleado nuevoEmpleado = new Empleado(60, "LOPEZ", 40, 1800.0);
             if (empleados.contains(nuevoEmpleado))
